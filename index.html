@@ -1,107 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Ookini-Reserva</title>
-        <style>
-            body{
-                font-family: system-ui,sans-serif;
-                max-width: 400px;
-                margin: 60px auto;
-                padding: 20px;
-                }
-            h1{
-                font-size: 24px;
-            }
-            label{
-                display: block;
-                margin-bottom: 8px;
-            }
-            input{
-                width: 100%;
-                padding: 10px;
-                font-size: 16px;
-                margin-bottom: 16px;
-                box-sizing: border-box;
-            }
-            button{
-                width: 100%;
-                padding: 12px;
-                font-size: 16px;
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Reservas en Ookini</h1>
-        <label for="cantidad">¿Cuantas Tazas Quieres Reservar?</label>
-        <input type="text" id="cantidad">
-        <button id="reservar">Reserva</button>
-        <script>
-function puedeReservar(cantidad) {
-    // 1. Convertimos el valor explícitamente a número para evitar comparaciones de texto
-    const valorNumerico = Number(cantidad);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ookini</title>
+    <link rel="stylesheet" href="styles.css"
+</head>
+<body>
 
-    // 2. Verificamos que sea un número válido y no esté vacío/NaN
-    if (isNaN(valorNumerico)) {
-         alert("Por favor, introduce un valor numérico válido.") ;
-        return  false;
-           
-        
-    }
+    <header>
+        <h1>Ookini</h1>
+        <h2>Cafe de Especialidad</h2>
+        <nav>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#metodos">Metodos</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#reservas">Reservas</a>
+        </nav>
 
-    // 3. Definimos los límites permitidos
-    const MINIMO = 1;
-    const MAXIMO = 2;
+    </header>
 
-    // 4. Comparamos los valores numéricamente
-    if (valorNumerico < MINIMO) {
-       
-        return    false;
-            
-        
-    }
+    <h1>Ookini</h1>
+    <main>
+        <section id="metodos">
+      
+<h2>Café de especialidad</h2>
+<p>Ookini significa gracias en Kansai, la región donde nació el método Kyoto drip. Servimos café de especialidad preparado con métodos lentos y con la atención que el grano merece.</p>
 
-    if (valorNumerico > MAXIMO) {
-         alert("ingresastes un dato invalido ...");
-        return false;
-         // AQUÍ VACIAMOS EL CAMPO DE TEXTO
-                input.value = ""; 
-                
-                // Opcional: poner el cursor de nuevo en el input para otra reserva
-                input.focus();   
-        
-    }
-
-    // Si pasa todas las validaciones
-   
-    return true; 
-         
-        
-   }
-
-            const input=document.querySelector("#cantidad");
-            const boton=document.querySelector("#reservar");
-            
-            boton.addEventListener("click",function(){
-                const cantidad=input.value;
-                
-
-                if(puedeReservar(cantidad)){
-                    alert("Reserva Confirmada");
-                    // AQUÍ VACIAMOS EL CAMPO DE TEXTO
-                input.value = ""; 
-                
-                // Opcional: poner el cursor de nuevo en el input para otra reserva
-                input.focus();
-                }else{
-                  // AQUÍ VACIAMOS EL CAMPO DE TEXTO
-                input.value = ""; 
-                
-                // Opcional: poner el cursor de nuevo en el input para otra reserva
-                input.focus();
-                }
-            });
-        </script>
-    </body>
+<h2>Métodos de preparación</h2>
+<h3 class="metodo-titulo">v60</h3>
+<p>Filtrado por goteo con molienda media. El agua cae despacio sobre el café durante tres minutos y arrastra notas limpias y brillantes. Es el método más versátil de la barra y el mejor para descubrir la personalidad de un grano nuevo.
+    <span class="precio">$7</span></p>
+<h3 class="metodo-titulo">Kyoto drip</h3>
+<p>Extracción en frío gota a gota durante ocho horas. Molienda media gruesa, agua a temperatura ambiente, paciencia japonesa. El resultado es un café denso, dulce y con muy poca acidez. Lo dejamos preparándose desde la noche anterior.
+    <span class="=precio">$8</span></p>
+<h3 class="metodo-titulo">Siphon japones</h3>
+<p>Método de vacío con molienda media fina. El agua sube por presión, se mezcla con el café durante un minuto, y baja filtrada cuando se apaga la llama. Tarda cuatro minutos en total y produce una taza limpia y aromática.
+    <span class="precio">$5</span></p>
+<h3 class="metodo-titulo">Prensa Francesa</h3>
+<p>Inmersión total con molienda gruesa durante cuatro minutos. Sin filtro de papel, los aceites del café pasan a la taza y construyen un cuerpo redondo y robusto. Es nuestro único método sin reserva, listo apenas lo pides.
+    <span class="precio">&3</span></p>
+  </section>
+  <section id="Reservas">
+    <p>Tazas Disponibles Hoy: <span id="contador-tazas">50</span></p>
+    <button id="buton-reserva">Reservar una Taza</button>
+  </section>
+    </main>
+    <footer id="contacto">
+        <img src="ookini-barra.png" alt="Barra de Ookini, cafe de especialidad" width="250">
+        <p>Abierto todos los dias de 8 a.m a 8 p.m Peru</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
 </html>
