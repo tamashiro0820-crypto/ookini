@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ookini-Reserva</title>
+        <style>
+            body{
+                font-family: system-ui,sans-serif;
+                max-width: 400px;
+                margin: 60px auto;
+                padding: 20px;
+                }
+            h1{
+                font-size: 24px;
+            }
+            label{
+                display: block;
+                margin-bottom: 8px;
+            }
+            input{
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                margin-bottom: 16px;
+                box-sizing: border-box;
+            }
+            button{
+                width: 100%;
+                padding: 12px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Reservas en Ookini</h1>
+        <label for="cantidad">¿Cuantas Tazas Quieres Reservar?</label>
+        <input type="text" id="cantidad">
+        <button id="reservar">Reserva</button>
+        <script>
+function puedeReservar(cantidad) {
+    // 1. Convertimos el valor explícitamente a número para evitar comparaciones de texto
+    const valorNumerico = Number(cantidad);
+
+    // 2. Verificamos que sea un número válido y no esté vacío/NaN
+    if (isNaN(valorNumerico)) {
+         alert("Por favor, introduce un valor numérico válido.") ;
+        return  false;
+           
+        
+    }
+
+    // 3. Definimos los límites permitidos
+    const MINIMO = 1;
+    const MAXIMO = 2;
+
+    // 4. Comparamos los valores numéricamente
+    if (valorNumerico < MINIMO) {
+       
+        return    false;
+            
+        
+    }
+
+    if (valorNumerico > MAXIMO) {
+         alert("ingresastes un dato invalido ...");
+        return false;
+         // AQUÍ VACIAMOS EL CAMPO DE TEXTO
+                input.value = ""; 
+                
+                // Opcional: poner el cursor de nuevo en el input para otra reserva
+                input.focus();   
+        
+    }
+
+    // Si pasa todas las validaciones
+   
+    return true; 
+         
+        
+   }
+
+            const input=document.querySelector("#cantidad");
+            const boton=document.querySelector("#reservar");
+            
+            boton.addEventListener("click",function(){
+                const cantidad=input.value;
+                
+
+                if(puedeReservar(cantidad)){
+                    alert("Reserva Confirmada");
+                    // AQUÍ VACIAMOS EL CAMPO DE TEXTO
+                input.value = ""; 
+                
+                // Opcional: poner el cursor de nuevo en el input para otra reserva
+                input.focus();
+                }else{
+                  // AQUÍ VACIAMOS EL CAMPO DE TEXTO
+                input.value = ""; 
+                
+                // Opcional: poner el cursor de nuevo en el input para otra reserva
+                input.focus();
+                }
+            });
+        </script>
+    </body>
+</html>

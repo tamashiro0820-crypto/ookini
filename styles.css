@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(138, 137, 143);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: azure;
+}
+h1{
+    color: beige;
+    font-size: 2.5rem;
+}
+nav a{
+    color: floralwhite;
+}
+main{
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: 0auto;
+}
+.metodo-titulo{
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    color:aquamarine;
+}
+.precio{
+    font-weight:bold;
+    color:aquamarine;
+}
+#contador-tazas{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:azure;
+}
+#buton-reserva
+  {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.25rem;
+    background-color: rgb(97, 47, 223);
+    color: rgb(240, 138, 54);
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
